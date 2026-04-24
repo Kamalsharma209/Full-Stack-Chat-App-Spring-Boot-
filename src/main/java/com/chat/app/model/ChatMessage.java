@@ -1,14 +1,18 @@
 package com.chat.app.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ChatMessage {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String content;
+
     private String sender;
+    private String content;
 }
